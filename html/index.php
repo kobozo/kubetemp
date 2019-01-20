@@ -80,6 +80,7 @@
 ?>
 <html>
   <head>
+    <link rel="icon" type="image/png" href="/icon.png" />
     <title>KubeTemp.io</title>
     <script language="javascript">
       function myCopy(field) {
@@ -91,7 +92,7 @@
     </script>
   </head>
   <body>
-    <center><H1>Original file</H1></center>
+    <center><H1>Original file <a href="https://github.com/kobozo/kubetemp/blob/master/HOWTO.md" target="_blank">(Read Me)</a></H1></center>
     <form action="/" method="post" id="usrform" enctype="multipart/form-data">
       <textarea style="width: 100%" rows=12 name="file"><?php echo $usrform_file;?></textarea>
       <br/>
@@ -107,9 +108,12 @@
       <H3>Edit manually</H3>
       <table border="0">
     <?php
+        $check_keys = array("");
         foreach( $matches_filtered as $variable) {
           $variable_exploded = explode("|", $variable);
           $key = "id_".$variable_exploded[0];
+          if( !in_array( $key, $check_keys ) ) {
+            $check_keys[] = $key;
     ?>
     <tr>
       <td><label for="id_<?php echo $variable; ?>"><?php echo $variable_exploded[0]; ?></label></td>
@@ -122,7 +126,8 @@
       }
     ?>
     </tr>
-    <?php 
+    <?php
+           } 
          }
     ?>
       </table>
