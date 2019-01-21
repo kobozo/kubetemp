@@ -2,12 +2,12 @@
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   if( isset($_POST['download_yaml']) ) {
     $str = $_POST['usrform_gen'];
-    $filename = "download.yaml";
+    $filename = $_POST['download_yaml_name'];
   }
 
   if( isset($_POST['download_csv']) ) {
     $str = $_POST['csv_settings'];
-    $filename = "settings.csv";
+    $filename = $_POST['download_csv_name'];
   }
 
   header('Content-Disposition: attachment; filename="'.$filename.'"');

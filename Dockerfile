@@ -1,6 +1,3 @@
-FROM firespring/apache2-php:7.2
+FROM ulsmith/alpine-apache-php7
 
-RUN touch /etc/apache2/sites-enabled/settings.conf && \
-    rm -f /var/www/html/*
-
-ADD html/ /var/www/html
+ADD html/ /app/public

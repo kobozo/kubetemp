@@ -141,9 +141,9 @@
       if( isset($_POST['generate']) ) {
       ?>
         <center><H1>Regenerated files</H1></center>
-        <p> YAML: <button type="button" onclick="myCopy('usrform_gen')">Copy</button><input type="submit" value="Download" name="download_yaml"><br/><textarea style="width: 100%" rows=12 id="usrform_gen" name="usrform_gen"><?php echo $usrform_generated;?></textarea></p>
+        <p> YAML: <button type="button" onclick="myCopy('usrform_gen')">Copy</button><input type="text" name="download_yaml_name" value="download.yaml"><input type="submit" value="Download" name="download_yaml"><br/><textarea style="width: 100%" rows=12 id="usrform_gen" name="usrform_gen"><?php echo $usrform_generated;?></textarea></p>
         <p> SHA1: <button type="button" onclick="myCopy('usrform_sha1')">Copy</button><br/> <input type="text" value="<?php echo sha1($usrform_generated); ?>" id="usrform_sha1"  style="width: 100%">
-        <p> CSV: <button type="button" onclick="myCopy('csv_settings')">Copy</button><input type="submit" value="Download" name="download_csv"><br/><textarea style="width: 100%" rows=12 id="csv_settings" name="csv_settings"><?php echo $csv_settings;?></textarea></p>
+        <p> CSV: <button type="button" onclick="myCopy('csv_settings')">Copy</button><input type="text" name="download_csv_name" value="settings.csv"><input type="submit" value="Download" name="download_csv"><br/><textarea style="width: 100%" rows=12 id="csv_settings" name="csv_settings"><?php echo $csv_settings;?></textarea></p>
       <?php
       }
 
